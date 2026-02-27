@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>form</title>
+    <link rel = "icon" type="image/png" href = "favicon/favicon.png">
+</head>
+<body>
+    <h1 style="color: rgb(3, 3, 76);">Login Form</h1>
+    <hr style="border: 1px solid black;">
+    <!--The URI of a program that processes the form information. This value can be overridden by a formaction attribute on a <button> or <input> element.-->
+        <!--The HTTP method that the browser uses to submit the form. Possible values are:
+
+            post: Corresponds to the HTTP POST method ; form data are included in the body of the form and sent to the server.
+
+            get: Corresponds to the HTTP GET method; form data are appended to the action attribute URI with a '?' as separator, and the resulting URI is sent to the server. Use this method when the form has no side-effects and contains only ASCII characters.
+
+            dialog: Use when the form is inside a <dialog> element to close the dialog when submitted.-->
+    <form action="process_form.php" method="post" enctype="multipart/form-data">
+        <!--When the value of the method attribute is post, enctype is the MIME type of content that is used to submit the form to the server. Possible values are:
+
+        ion/x-www-form-urlencoded: The default value if the attribute is not specified.
+    
+        multipart/form-data: The value used for an <input> element with the type attribute set to "file".
+        
+        text/plain: (HTML5)-->
+
+        <!--by label , if we click to the label, it focuses on the input field with matching id-->
+        <label for="username">Username:</label>
+        <!--The input element represents a typed data field, usually with a form control to allow the user to edit the data.-->
+        <input type="text" placeholder="Username" id="username" minlength="6" maxlength="9" required>
+<br><br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" id="password" required> 
+<br><br>
+        <label for="email" >Email:</label>
+        <input type="email" placeholder="abc@mail.com" id="email" required>
+<br><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" placeholder="Phone Number" id="phone" maxlength="10" minlength="10" pattern="[0-9]{10}" required>
+<br><br>
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date" required>
+<br><br>
+        <label for="title">Title :</label>
+
+        <input type="radio" id="mr" name="title" value="mr" >
+        <label for="mr">Mr.</label>
+        <input type="radio" id="ms" name="title" value="ms">
+        <label for="ms">Ms.</label>
+        <input type="radio" id="mrs" name="title" value="mrs">
+        <label for="mrs">Mrs.</label>
+<br><br>
+        <label for="payment" ">Payment : </label>
+        <select id="payment" required>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="giftcard">Gift Card</option>
+        </select>
+
+<br><br>
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox" id="subscribe" >
+<br><br>
+        <label for="comments">Comments:</label><br>
+
+        <textarea id="comments" rows="4" cols="50" placeholder="Enter your text here........."></textarea>
+
+<br><br>
+        <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf" style="background-color: rgb(107, 117, 10); color: rgb(61, 2, 28); padding: 7px 13px; border:none; border-radius:10px; cursor:pointer;">
+
+<br><br>
+        <input type="reset" value="Reset" style="background-color: rgb(14, 14, 33); color: white; padding: 7px 13px; border:none; border-radius:10px; cursor:pointer;">
+
+        <input type="submit" value="Login" style="background-color: rgb(14, 14, 33); color: white; padding: 7px 13px; border:none; border-radius:10px; cursor:pointer; " onclick="alert('Form submitted successfully!');">
+        
+
+    </form>
+   
+</body>
+</html>
