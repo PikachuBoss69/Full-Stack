@@ -1,33 +1,38 @@
+html{
+    height: 100%;
+}
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 130px;
-    background-image: url(images/cover.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(images/background.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 .container{
+    margin-top: -100px;;
     padding: 10px;
     border-radius: 12px;
     min-width: 350px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: transparent;
-    box-shadow: 3px 3px 5px black;
-    background-image: url(images/sun.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+   
+    background: transparent;
 }
 .container h1{
     font-size: 2em;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(7, 10, 214);
 }
 #input-block{
     width: 270px;
-    border: none;
-    box-shadow: 2px 2px 8px black;
+     border: 2px solid blue;
+    box-shadow: 2px 2px 8px blue,-2px -2px 8px blue;
+    color:white;
     border-radius: 6px;
     padding: 5px;
     font-family: cursive;
@@ -46,9 +51,8 @@ body{
     font-size: 0.8em;
     font-family: cursive;
     border: 2px solid blue;
-    box-shadow: 2px 2px 8px blue;
     color: white;
-    background: transparent;
+    background: blue;
     cursor: pointer;
 }
 #search-button:hover{
@@ -57,12 +61,27 @@ body{
 #search-button:active{
     transform:translate(-2px ,2px) ;
 }
-.container h3{
+.card{
+    position: relative;
+    top: 60%;
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    box-shadow: 3px 3px 5px black,-3px -3px 5px black;
+    background-image: url(images/sun.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card h3{
     font-family: cursive;
     font-size: 1.5em;
     
 }
-.container p{
+.card p{
     font-family: cursive;
     font-size: 1.2em;
 }
