@@ -7,12 +7,34 @@ const choices = ["rock","paper","scissor"];
 let updateUserScore = 0;
 let updateComputerScore = 0;
 
-function decideWinner(input){
+async function decideWinner(input){
         let computerChoice = choices[Math.floor(Math.random() * 3)];
 
         userImg.src = `images/${input}.png`;
-        computerImg.src = `images/${computerChoice}.png`;
+        // await Counting();    
+        
+        await new Promise((resolve) => {
 
+            const numbers = ["1","2","3"];
+            let index = 2;
+            computerImg.src = `images/3.png`;
+            result_display.textContent = "........."
+            result_display.style.color = "white"
+            const interval = setInterval(() => {
+
+                computerImg.src = `images/${numbers[index-1]}.png`;
+        
+                if(index === 0){
+                    clearInterval(interval);
+                    resolve();
+                }
+                index--;
+
+            },500);
+
+});
+        
+        computerImg.src = `images/${computerChoice}.png`; 
         if(computerChoice==input){
             result_display.textContent = "DRAW";
             result_display.style.color = "blue";
@@ -69,6 +91,10 @@ function decideWinner(input){
                 }
         }
 }
+
+// function Counting(){
+
+// }
 
 function reset(){
     result_display.textContent = "SELECT OPTION TO PLAY"

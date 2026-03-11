@@ -45,27 +45,34 @@ function displayWeatherData(data){
     const id = data.weather[0].id; 
 
     console.log(city);
+    //Used fragment here which is a lightweight DOM, for better performance but for this code neglegiable advantage is given
+    let fragment = document.createDocumentFragment();
+
     card.textContent = "";
     card.style.display ="flex";
-
-    // const cityName = document.createElement("h3");
-    // const temperature = document.createElement("p");
-    // const desc = document.createElement("p");
+    const time1 = performance.now();
+    const cityName = document.createElement("h3");
+    const temperature = document.createElement("p");
+    const desc = document.createElement("p");
     
-    // cityName.textContent = city;
-    // temperature.textContent = `${temp}°C`;
-    // desc.textContent = description;
+    cityName.textContent = city;
+    temperature.textContent = `${temp}°C`;
+    desc.textContent = description;
 
-    // card.appendChild(cityName);
-    // card.appendChild(temperature);
-    // card.appendChild(desc);
+    fragment.appendChild(cityName);
+    fragment.appendChild(temperature);
+    fragment.appendChild(desc);
 
-    //                  OR  
-    card.innerHTML = `
-    <h3>${city}</h3>
-    <p>${temp} °C</p>
-    <p>${description}</p>
-    `;
+    card.appendChild(fragment);
+
+    //                  OR  (But Performance Heavy not too much but with another example cases can be reversed)
+
+    // card.innerHTML = `
+    // <h3>${city}</h3>
+    // <p>${temp} °C</p>
+    // <p>${description}</p>
+    // `;
+   
     displayWeatherImages(id);
 
 }
