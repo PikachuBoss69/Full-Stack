@@ -1,19 +1,20 @@
 const cell = document.querySelectorAll(".cell");
 const resetButton = document.getElementById("reset-button");
 const statusText = document.getElementById("status-text");
+ const line = document.querySelector('.line');
 let gameRunning = false;
 let playerTurn = 'X';
 let Winnerdecide = false;
 
 const winConditions = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
+    [0,1,2,0,-70,0],
+    [3,4,5,0,50,0],
+    [6,7,8,0,180,0],
+    [0,3,6,-130,60,90],
+    [1,4,7,0,60,90],
+    [2,5,8,130,60,90],
+    [0,4,8,0,60,45],
+    [2,4,6,0,60,-45]
 ];
 
 let options =["","","","","","","","",""];
@@ -66,6 +67,7 @@ function restartGame(){
     statusText.textContent = `${playerTurn}'s Turn`;
     gameRunning = true;
     Winnerdecide = false;
+    line.style.display = "none";
 }
 
 function checkWinner(){
@@ -81,6 +83,7 @@ function checkWinner(){
         }
         if(cellA == cellB && cellB == cellC && cellA!=""){
             Winnerdecide = true;
+            updateLine(container);
             break;
         }
     }
@@ -92,4 +95,8 @@ function checkWinner(){
             statusText.textContent = "Game is Draw";
             gameRunning =false;
         }
+}
+function updateLine(container){
+    line.style.display = "block";
+    line.style.transform = `translate(${container[3]}px, ${container[4]}px) rotate(${container[5]}deg)`;
 }
