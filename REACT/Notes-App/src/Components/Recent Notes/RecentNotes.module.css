@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.945);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 600px;
+}
+
+.heading{
+    font-size: 4rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    margin-bottom: 40px;
+}
+.card{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.card::-webkit-scrollbar{
+    display: none;
+}

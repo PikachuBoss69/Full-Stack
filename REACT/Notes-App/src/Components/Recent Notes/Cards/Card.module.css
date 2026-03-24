@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.card{
+    width: 350px;
+    height: 280px;
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    flex-shrink: 0; 
+}
