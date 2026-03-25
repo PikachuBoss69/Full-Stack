@@ -16,6 +16,8 @@ function AddNotes({setNotes}) {
 
     setHeading("");
     setContent("");
+
+    
   }
 
   return (
