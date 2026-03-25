@@ -2,19 +2,26 @@ import React from 'react';
 import styles from './RecentNotes.module.css';
 import Card from './Cards/Card';
 
-function RecentNotes() {
+function RecentNotes({notes, onDelete}) {
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+    
         <h2 className={styles.heading}>
             Recent Notes
         </h2>
         <div className={styles.card}>
-            <Card/>
-     
+            {notes.map((notes) => {
+              return (
+                  <Card key={notes.id} 
+                  heading={notes.heading}
+                  content={notes.content}
+                  onDelete={()=> onDelete(notes.id)} />
+                   
+                  );
+            })
+            }
         </div>
       </div>
-    </div>
   );
 }
 
