@@ -1,0 +1,22 @@
+.container{
+    background-color: bisque;
+    width: 26vw;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.ProfileName{
+    
+}
+.heading{
+    font-size: 4rem;
+    padding: 30px;
+}
+.ProfileInformation{
+
+}
+.para{
+
+}

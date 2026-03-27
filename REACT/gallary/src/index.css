@@ -1,3 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .merger{
+  display: flex;
+  flex-direction: row;
   background-color: aqua;
+  height: 100vh;
+  width: 100vw;
 }

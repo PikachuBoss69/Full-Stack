@@ -5,7 +5,7 @@ function Profile() {
   return (
     <div className={styles.container}>
         <div className={styles.ProilfeName}>
-            <h1 className={heading}>Patrik</h1>
+            <h1 className={styles.heading}>Patrik</h1>
         </div>
         <div className={styles.ProfileInformation}>
             <p className={styles.para}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
