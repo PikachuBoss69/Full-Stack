@@ -1,40 +1,34 @@
-import { useState, useEffect } from 'react'
-import Profile from './components/Profile Details/Profile';
-import ImageCompartment from './components/Image Section/ImageCompartment';
-import Pagination from './components/pagination/Pagination';
+
 import NavBar from './components/NavBar/NavBar';
-import axios from 'axios';
+
+import Home from './Pages/Home';
+import Product from './Pages/Product'
+import About from './Pages/About'
+import Images from './Pages/Images'
+import NotFound from './Pages/NotFound'
+import {Route, Routes} from 'react-router-dom';
 
 
 function App() {
-  const [userData, setUserData] = useState([])
-  const [index, setIndex] = useState(1);
-  const [selectedId, setSelectedId] = useState();
-
-  const getData = async ()=>{
-    console.log("hello")
-    const response = await axios.get(`https://picsum.photos/v2/list?page=${index}&limit=10`);
-    setUserData(response.data);
-  }
-
-  useEffect(()=>{
-    getData();
-  },[index]);
 
 
   return (
     <div className='merger'>   
     <div className='nav-bar'>
       <NavBar/>
+   
     </div>
-    <div className='other-component'>
-      <Profile data ={userData} selectedId = {selectedId}/>
-      <ImageCompartment data = {userData} setSelectedId = {setSelectedId}/>
+
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/product' element={<Product/>}/>
+      <Route path='/images' element={<Images/>}/>
+      <Route path='*' element={<NotFound/>}/>
+    </Routes>
+
     </div>
-    <div className='pagination'>
-      <Pagination  index={index} setIndex={setIndex} />
-    </div>
-    </div>
+    
   );
 }
 

@@ -7,9 +7,9 @@ function Profile({ data, selectedId }) {
   return (
     <div className={styles.container}>
       <div className={styles.ProilfeName}>
-        <h1 className={styles.heading}>
+        <h2 className={styles.heading}>
           {selectedUser ? selectedUser.author : "Select a user"}
-        </h1>
+        </h2>
       </div>
     </div>
   );

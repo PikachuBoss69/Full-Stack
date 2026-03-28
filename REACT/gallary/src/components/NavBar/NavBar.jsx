@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './NavBar.module.css';
-
+import { Link } from 'react-router-dom';
+import NavBar2 from './NavBar2';
 function NavBar() {
   return (
     <div className={styles.container}>
@@ -9,11 +10,12 @@ function NavBar() {
             <h2>GALLARY</h2>
         </div>
         <div className={styles.components}>
-        <a className={styles.component} href='#'>Home</a>
-        <a className={styles.component} href='#'>Conatct</a>
-        <a className={styles.component} href='#'>Product</a>
-        <a className={styles.component} href='#'>Images</a>
+        <Link className={styles.component} to='/'>Home</Link>
+        <Link className={styles.component} to='/about'>About</Link>
+        <Link className={styles.component} to='/product'>Product</Link>
+        <Link className={styles.component} to='/images'>Images</Link>
         </div>
+        <NavBar2/>
       </nav>
     </div>
   );
