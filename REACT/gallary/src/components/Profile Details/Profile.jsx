@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './Profile.module.css';
 
-function Profile() {
+function Profile({ data, selectedId }) {
+  const selectedUser = data.find((item) => item.id === selectedId);
+
   return (
     <div className={styles.container}>
-        <div className={styles.ProilfeName}>
-            <h1 className={styles.heading}>Patrik</h1>
-        </div>
-        <div className={styles.ProfileInformation}>
-            <p className={styles.para}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
+      <div className={styles.ProilfeName}>
+        <h1 className={styles.heading}>
+          {selectedUser ? selectedUser.author : "Select a user"}
+        </h1>
+      </div>
     </div>
   );
 }
