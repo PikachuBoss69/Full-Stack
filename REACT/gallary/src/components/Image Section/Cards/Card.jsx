@@ -4,9 +4,12 @@ import styles from './Card.module.css';
 function Card() {
   return (
     <div className={styles.container}>
-      {/* <a>
-        <img className={styles.image} src='https://www.bing.com/ck/a?!&&p=7f55d88b1d2d659f3727ce207f3c8baec2f23ec6a4b798966b7bea1bc05bc222JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=2bf7ab2a-9adf-62a8-39eb-bff49b2d6326&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbWFnZSZpZD03QzgyNTUzMjU2NzM5RDc3RTM3Nzk5RDEwMDM2Qzg3QTgzNTI3Qjk4JkZPUk09SVFGUkJB' alt='Image'></img>
-      </a> */}
+      <a href="#">
+        <img className={styles.image} src='https://images.unsplash.com/photo-1773332611514-238856b76198?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8' alt="Image"/>
+      </a>
+        <div className={styles.tag}>
+          <h3 className={styles.tagHeading}>Patrik</h3>
+        </div>
     </div>
   );
 }

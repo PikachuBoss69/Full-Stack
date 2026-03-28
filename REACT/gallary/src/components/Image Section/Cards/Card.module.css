@@ -1,0 +1,21 @@
+.container{
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+.image{
+    height: 100%;
+    width: 100%;
+}
+.tag{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tag .tagHeading{
+    font-size: 1.4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}

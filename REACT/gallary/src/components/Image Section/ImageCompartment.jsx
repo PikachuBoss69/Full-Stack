@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Imagecompartment.module.css';
+import styles from './ImageCompartment.module.css';
 import Card from './Cards/Card';
 
-function Imagecompartment() {
+function ImageCompartment() {
   return (
     <div className={styles.container}>
       <Card/>
@@ -10,4 +10,4 @@ function Imagecompartment() {
   );
 }
 
-export default Imagecompartment;
+export default ImageCompartment;
