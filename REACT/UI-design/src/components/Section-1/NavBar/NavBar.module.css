@@ -1,0 +1,22 @@
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+}
+.navBarHeading{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    letter-spacing: 0.08em;
+}
+.navBarButton{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    letter-spacing: 0.15em;   
+}

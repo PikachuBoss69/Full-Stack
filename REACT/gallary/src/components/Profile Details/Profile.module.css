@@ -1,0 +1,24 @@
+.container{
+    background-color: rgba(0, 255, 255, 0.731);
+    width: 26vw;
+    height: 100vh;
+    color: white;
+     display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.ProfileName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    
+   
+}
+.heading{
+    font-size: 4rem;
+    padding: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+
+}

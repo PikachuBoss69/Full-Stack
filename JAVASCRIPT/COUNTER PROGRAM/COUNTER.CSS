@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(108, 224, 188);
+}
+#cnt{
+    font-size: 10em;
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.but{
+    text-align: center;
+    display: inline-box;
+    padding: 7px 5px;
+    margin: 6px;
+    border-radius: 10px;
+    border:2px solid rgb(92, 15, 15);
+    background-color: rgb(158, 203, 25);
+    color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px blueviolet, -2px -2px 2px green;
+
+}
+.buttons{
+    text-align: center;
+    margin-left: 80px;
+}
+.but:hover{
+    background-color: rgb(68, 89, 31);
+}

@@ -1,0 +1,70 @@
+.card{
+    height: 90%;
+    width: 30%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 30px;
+    flex-shrink: 0;
+
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+
+}
+
+.upperNum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    width: fit-content;
+    padding: 18px;
+    background-color: white;
+    font-weight: 700;
+    height: 12px;
+
+}
+
+.content{
+    margin-bottom: 50px;
+}
+
+.para{
+    font-family: cursive;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: orange;
+    color: white;
+    border: none;
+}
+

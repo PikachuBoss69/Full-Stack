@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators in CSS</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h1>Combinators in CSS</h1>
+    <hr>
+    <p>Combinators are used in CSS to define the relationship between selectors. There
+    are four main types of combinators:</p>
+    <ul>
+        <li><strong>Descendant Combinator (space)</strong>: Selects elements that are descendants of a specified element.</li>
+        <li><strong>Child Combinator (>)</strong>: Selects elements that are direct children of a specified element.</li>
+        <li><strong>Adjacent Sibling Combinator (+)</strong>: Selects an element that is immediately adjacent to another element.</li>
+        <li><strong>General Sibling Combinator (~)</strong>: Selects all elements that are siblings of a specified element.</li>
+    </ul>
+    <div id="container">
+        <p>this is 1</p>
+        <p>this is 2</p>
+        <div id="child">
+            <p>this is 3</p>
+        </div>
+    </div>
+    <p>this is 4</p>
+    <p>this is 5</p>
+</body>
+</html>

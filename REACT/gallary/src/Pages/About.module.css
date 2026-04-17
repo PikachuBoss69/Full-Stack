@@ -1,0 +1,24 @@
+.container {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.text {
+  margin: 20px 0;
+  color: #555;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 8px 0;
+}

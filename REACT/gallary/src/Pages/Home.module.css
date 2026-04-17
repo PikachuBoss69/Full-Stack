@@ -1,0 +1,36 @@
+.container {
+  padding: 40px;
+  text-align: center;
+}
+
+.hero {
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: gray;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

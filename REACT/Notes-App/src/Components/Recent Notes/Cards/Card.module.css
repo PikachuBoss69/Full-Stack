@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.card{
+    width: 250px;
+    height: 280px;
+    background-image: url("https://cdn.pixabay.com/photo/2013/07/13/11/55/notes-158958_1280.png");
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 30px;
+
+    flex-shrink: 0; 
+    position: relative;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.heading{
+    color: black;
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 30px;
+}
+.para{
+    color: black;
+    font-size: 1.2rem;
+    padding: 15px;
+}
+.cross{
+    font-size: 1rem;
+    position: absolute;
+    top: 80%;
+    left: 36%;
+    padding: 8px;
+    border-radius: 13px;
+    color: white;
+    background-color: red;
+    border: none;
+    transition: ease 0.2s;
+
+}
+.cross:hover{
+    background-color: rgba(214, 8, 8, 0.792);
+}

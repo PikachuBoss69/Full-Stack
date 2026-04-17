@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paer Scissor</title>
+    <link rel="stylesheet" href="rock_paper_scissor.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">ROCK PAPER SCISSOR</h1>
+        <div class="display-screen">
+
+            <div  id="user-display">
+                <h4>YOU</h4>
+                <img src="images/question-mark.png">
+                <h4 id="userScore">Score : 0</h4>
+            </div>
+            <div id="computer-display">
+                <h4>COMPUTER</h4>
+                <img src="images/question-mark.png">
+                <h4 id="computerScore">Score : 0</h4>
+        </div>
+
+        </div>
+        <div id="selectors">
+            <button class="selectors-buttons" id="rock" onclick="decideWinner('rock')"><img src="images/rock.png"></button>
+            <button class="selectors-buttons" id="paper" onclick="decideWinner('paper')"><img src="images/paper.png"></button>
+            <button class="selectors-buttons" id="scissor" onclick="decideWinner('scissor')"><img src="images/scissor.png"></button>
+
+        </div>
+        <div id="winner-display">
+            SELECT  OPTION TO PLAY
+        </div>
+        <button id="reset" onclick="reset()">RESET</button>
+    </div>
+    
+
+    <script src="rock_paper_scissor.js"></script>
+</body>
+</html>

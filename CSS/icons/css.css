@@ -1,0 +1,25 @@
+.icons{
+    text-align: center;
+}
+.icons a{
+    text-decoration: none;
+    margin-right: 20px;
+}
+.fa-duotone.fa-solid.fa-house.fa-5x{
+    color: #582023;
+}
+.fa-brands.fa-youtube.fa-5x{
+    color: #FF0000;
+}
+.fa-solid.fa-dragon.fa-5x{
+    color: #FFA500;
+}
+.fa-duotone.fa-solid.fa-house.fa-5x:hover{
+    color: #000000;
+}
+.fa-brands.fa-youtube.fa-5x:hover{
+    color: #650606;
+}
+.fa-solid.fa-dragon.fa-5x:hover{
+    color: #9a6a12;
+}

@@ -1,0 +1,23 @@
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.heading h2{
+    font-size: 3rem;
+    font-family:  Arial, sans-serif;
+
+}
+.components{
+    display: flex;
+    justify-content:space-evenly;
+    gap: 20px;
+}
+.component{
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+}

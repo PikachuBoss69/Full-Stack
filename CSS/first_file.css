@@ -1,0 +1,30 @@
+@font-face{
+    font-family: 'Arimo';
+    src: url(fonts/Arimo-VariableFont_wght.ttf) ;
+}
+@font-face{
+    font-family: 'Haettenschweiler';
+    src: url(fonts/Haettenschweiler-Regular.ttf) ;
+}
+body{
+    background-color: rgb(194, 162, 115);
+}
+h1{
+    color: tomato;
+    font-family: Arimo,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-left: 2px solid hsl(115, 100%, 50%);
+    border-top: 2px dotted #3300ff;
+}
+.paragraph{
+    color: lch(31% 69.18 38.97);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    border-style: solid;
+    padding: 50px 120px;
+    border-width: 2px;
+    border-color: aquamarine;
+    border-radius: 50px;
+}
+.line{
+    color: #59ff5f;
+}

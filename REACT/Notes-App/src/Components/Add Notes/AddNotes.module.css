@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.849);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 600px;
+    gap: 10px;
+}
+
+.heading{
+    font-size: 4rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.notesHeading{
+    padding: 16px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    border: 2px solid white;
+    outline: none;
+    background: transparent;
+    color: grey;
+      margin-bottom: 20px;
+}
+
+.notesContent{
+    padding: 16px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    border: 2px solid white;
+    outline: none;
+    height: 200px;
+    max-width: 470px;
+    min-height: 200px;
+    background: transparent;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.addBtn{
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+.addBtn:hover{
+    background-color: rgba(255, 255, 255, 0.667);
+}
