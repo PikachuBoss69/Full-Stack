@@ -32,7 +32,7 @@ accountSchema.methods.getBalance = async function (){
     {
         $group : {
             _id:null,
-            totaldebit: {
+            totalDebit: {
                 $sum :{
                     $cond:[
                         {$eq:["$type","DEBIT"]},
@@ -63,11 +63,14 @@ accountSchema.methods.getBalance = async function (){
     }
    ])
 
-   if(balanceData.length === 0){
+    if (!balanceData.length) {
     return 0;
-   }
+    }
 
-   return balanceData[0].balance
+// ?? 0 (nullish coalescing)
+// “If value is null or undefined, return 0 instead"
+
+    return balanceData[0].balance ?? 0;
 }
 
 

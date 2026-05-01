@@ -7,7 +7,9 @@ const client_secret = process.env.CLIENT_SECRET
 const refresh_token = process.env.REFRESH_TOKEN
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     type: 'OAuth2',
     user: bank_email,

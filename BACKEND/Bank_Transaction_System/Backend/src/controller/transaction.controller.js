@@ -13,7 +13,9 @@ async function createTransaction(req, res){
         
         const { fromAccount, toAccount, amount, idempotencyKey} = req.body;
         
-        const { fromUserAccount, toUserAccount} = await validateRequest(fromAccount, toAccount, amount, idempotencyKey);
+        const userId = req.user._id;
+
+        const { fromUserAccount, toUserAccount} = await validateRequest(fromAccount, toAccount, amount, idempotencyKey, userId);
 
             const existing_transaction = await isTransactionAlreadyExist(idempotencyKey);
 
@@ -55,12 +57,21 @@ async function createTransaction(req, res){
             session.endSession();
             throw err;
         }
-        sendTransactionEmail({
-            _email:req.user.email,
-            _name:req.user.name,
-            _amount:amount,
-            _toAccount:toAccount
-        }).catch(console.error);
+        try{
+        console.log("Sending transaction email to:", req.user.email);
+        if (!req.user?.email) {
+            console.log("User email missing ❌");
+        }
+
+            await sendTransactionEmail({
+                _email:req.user.email,
+                _name:req.user.name,
+                _amount:amount,
+                _toAccount:toAccount
+            })
+        }catch(err){
+            console.error("Transaction email failed:", err);
+        }
         
         return res.status(201).json({
         message: "Transaction completed successfully",
@@ -117,13 +128,14 @@ async function createInitialFunding(req, res){
    }
 }
 
-async function validateRequest(fromAccount, toAccount, amount, idempotencyKey){
+async function validateRequest(fromAccount, toAccount, amount, idempotencyKey, userId){
     if(!fromAccount || !toAccount || !amount || !idempotencyKey){
        throw new AppError("Missing required parameters", 400);
     }
 
     const fromUserAccount = await accountModel.findOne({
-        _id: fromAccount
+        _id: fromAccount,
+        user: userId
     })
 
     const toUserAccount = await accountModel.findOne({
