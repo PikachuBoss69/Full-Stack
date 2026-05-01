@@ -44,75 +44,78 @@ const sendEmail = async (to, subject, text, html) => {
   }
 };
 
+
+
 async function sendRegistrationEmail(userEmail, name) {
-  const subject = "Welcome to Bhandari Bank 🎉";
+  const subject = "Welcome to Bhandari Bank";
 
   const text = `Hello ${name},
 
-Welcome to Bhandari Bank! We're excited to have you on board.
+Welcome to Bhandari Bank.
 
-You can now manage your transactions securely and efficiently.
+Your account is now ready. You can securely manage transactions, track balances, and transfer funds anytime.
 
-Best regards,  
-Bhandari Bank Team`;
+Login here: http://localhost:3000/login
+
+If you did not sign up, please contact support immediately.
+
+– Bhandari Bank`;
 
   const html = `
-  <div style="font-family: Arial, sans-serif; background-color: #f4f6f8; padding: 20px;">
-    <table align="center" width="600" style="background: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <div style="background-color:#f5f7fb;padding:40px 0;font-family:Inter,Arial,sans-serif;">
+    
+    <table align="center" width="560" style="background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e6e9ef;">
       
       <!-- Header -->
       <tr>
-        <td style="background: #0d6efd; color: white; padding: 20px; text-align: center;">
-          <h1 style="margin: 0;">🏦 Bhandari Bank</h1>
-          <p style="margin: 5px 0 0;">Secure. Fast. Reliable.</p>
+        <td style="padding:24px 32px;border-bottom:1px solid #eef1f6;">
+          <h2 style="margin:0;color:#1a1f36;font-weight:600;">Bhandari Bank</h2>
         </td>
       </tr>
 
       <!-- Body -->
       <tr>
-        <td style="padding: 30px; color: #333;">
-          <h2>Hello ${name}, 👋</h2>
+        <td style="padding:32px;color:#2e2e2e;">
           
-          <p>
-            Welcome to <strong>Bhandari Bank</strong>! We're thrilled to have you join us.
+          <p style="margin:0 0 16px;font-size:16px;">
+            Hello <strong>${name}</strong>,
           </p>
 
-          <p>
-            You can now enjoy:
+          <p style="margin:0 0 20px;line-height:1.6;color:#555;">
+            Your account has been successfully created. You now have access to secure and real-time banking services.
           </p>
 
-          <ul>
-            <li>💳 Secure Transactions</li>
-            <li>📊 Real-time Account Tracking</li>
-            <li>⚡ Fast Money Transfers</li>
-          </ul>
+          <!-- Feature box -->
+          <div style="background:#f8fafc;border-radius:8px;padding:20px;margin:20px 0;">
+            <p style="margin:0 0 10px;font-weight:500;color:#111;">What you can do now:</p>
+            <ul style="margin:0;padding-left:18px;color:#555;">
+              <li>Track your balance instantly</li>
+              <li>Send and receive money securely</li>
+              <li>Monitor transaction history</li>
+            </ul>
+          </div>
 
-          <p style="margin-top: 20px;">
-            Click below to get started:
-          </p>
-
-          <div style="text-align: center; margin: 30px 0;">
+          <!-- CTA -->
+          <div style="text-align:center;margin:30px 0;">
             <a href="http://localhost:3000/login"
-               style="background: #0d6efd; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-              Login to Your Account
+               style="background:#111827;color:#ffffff;padding:12px 28px;text-decoration:none;border-radius:6px;font-size:14px;font-weight:500;display:inline-block;">
+              Access Your Account
             </a>
           </div>
 
-          <p>
-            If you have any questions, feel free to contact our support team.
+          <p style="margin-top:30px;font-size:14px;color:#777;">
+            If this wasn’t you, please contact support immediately.
           </p>
 
-          <p>
-            Best regards,<br/>
-            <strong>Bhandari Bank Team</strong>
-          </p>
         </td>
       </tr>
 
       <!-- Footer -->
       <tr>
-        <td style="background: #f1f1f1; text-align: center; padding: 15px; font-size: 12px; color: #777;">
-          © ${new Date().getFullYear()} Bhandari Bank. All rights reserved.
+        <td style="padding:20px 32px;background:#fafbfc;font-size:12px;color:#999;text-align:center;">
+          © ${new Date().getFullYear()} Bhandari Bank  
+          <br/>
+          Secure banking infrastructure
         </td>
       </tr>
 
@@ -123,5 +126,96 @@ Bhandari Bank Team`;
   await sendEmail(userEmail, subject, text, html);
 }
 
-module.exports = {sendRegistrationEmail};
+async function sendTransactionEmail(email, name, amount, toAccount) {
+  const subject = "Transaction Successful";
+
+  const text = `Hello ${name},
+
+Your transaction has been successfully processed.
+
+Amount: ₹${amount}
+To Account: ${toAccount}
+
+If you did not initiate this transaction, contact support immediately.
+
+– Bhandari Bank`;
+
+  const html = `
+  <div style="background-color:#f5f7fb;padding:40px 0;font-family:Inter,Arial,sans-serif;">
+    
+    <table align="center" width="560" style="background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e6e9ef;">
+      
+      <!-- Header -->
+      <tr>
+        <td style="padding:24px 32px;border-bottom:1px solid #eef1f6;">
+          <h2 style="margin:0;color:#1a1f36;font-weight:600;">Bhandari Bank</h2>
+        </td>
+      </tr>
+
+      <!-- Body -->
+      <tr>
+        <td style="padding:32px;color:#2e2e2e;">
+          
+          <p style="margin:0 0 16px;font-size:16px;">
+            Hello <strong>${name}</strong>,
+          </p>
+
+          <p style="margin:0 0 20px;color:#555;">
+            Your transaction has been successfully completed.
+          </p>
+
+          <!-- Transaction Box -->
+          <div style="background:#f8fafc;border-radius:8px;padding:20px;margin:20px 0;">
+            
+            <table width="100%" style="font-size:14px;color:#444;">
+              <tr>
+                <td style="padding:8px 0;">Amount</td>
+                <td style="padding:8px 0;text-align:right;font-weight:600;">₹${amount}</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;">Transferred To</td>
+                <td style="padding:8px 0;text-align:right;">${toAccount}</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0;">Status</td>
+                <td style="padding:8px 0;text-align:right;color:#16a34a;font-weight:600;">
+                  Completed
+                </td>
+              </tr>
+            </table>
+
+          </div>
+
+          <!-- CTA -->
+          <div style="text-align:center;margin:30px 0;">
+            <a href="http://localhost:3000/dashboard"
+               style="background:#111827;color:#ffffff;padding:12px 28px;text-decoration:none;border-radius:6px;font-size:14px;font-weight:500;display:inline-block;">
+              View Transaction
+            </a>
+          </div>
+
+          <p style="margin-top:30px;font-size:14px;color:#777;">
+            If you did not initiate this transaction, please contact support immediately.
+          </p>
+
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td style="padding:20px 32px;background:#fafbfc;font-size:12px;color:#999;text-align:center;">
+          © ${new Date().getFullYear()} Bhandari Bank  
+          <br/>
+          Secure Transaction Notification
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  `;
+
+  await sendEmail(email, subject, text, html);
+}
+
+module.exports = {sendRegistrationEmail, sendTransactionEmail};
 
