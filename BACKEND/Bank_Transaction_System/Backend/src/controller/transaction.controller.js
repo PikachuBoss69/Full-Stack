@@ -1,7 +1,7 @@
 const transactionModel = require("../models/transaction.model")
 const ledgerModel = require("../models/ledger.model")
 const accountModel = require("../models/account.model")
-const emailService = require("../services/email.service")
+const emailService = require("../services/nodemailer.service")
 const mongoose = require("mongoose")
 
 //Created to create custom errors full production level
@@ -76,6 +76,47 @@ async function createTransaction(req, res){
 
 }
 
+async function createInitialFunding(req, res){
+    try{
+
+        const {toAccount, amount, idempotencyKey} = req.body;
+        const userId = req.user._id;
+        
+        const {fromUserAccount, toUserAccount} = await validateInitialFunding({ toAccount, amount, idempotencyKey, userId});
+        
+        const session = await mongoose.startSession();
+    let transaction;
+    const fromAccount = fromUserAccount._id;
+    try {
+        session.startTransaction();
+        
+            transaction = await executeTransactionFlow({
+                fromAccount,
+                toAccount,
+                amount,
+                idempotencyKey,
+                session
+            });
+
+            await session.commitTransaction();
+            session.endSession();
+            
+        } catch (err) {
+            await session.abortTransaction();
+            session.endSession();
+            throw err;
+        }
+        return res.status(201).json({
+            message: "Initial funds transaction completed successfully",
+            transaction: transaction
+        });
+   }catch(err){
+        return res.status(err.status || 400).json({
+            message: err.message
+        });
+   }
+}
+
 async function validateRequest(fromAccount, toAccount, amount, idempotencyKey){
     if(!fromAccount || !toAccount || !amount || !idempotencyKey){
        throw new AppError("Missing required parameters", 400);
@@ -94,6 +135,25 @@ async function validateRequest(fromAccount, toAccount, amount, idempotencyKey){
     }
     return { fromUserAccount, toUserAccount };
 
+}
+
+async function validateInitialFunding({ toAccount, amount, idempotencyKey, userId }) {
+    if (!toAccount || !amount || !idempotencyKey) {
+        throw new AppError("Missing required parameters", 400);
+    }
+
+    const toUserAccount = await accountModel.findById(toAccount);
+
+    if (!toUserAccount) {
+        throw new AppError("Invalid toAccount", 400);
+    }
+
+    const fromUserAccount = await accountModel.findOne({ user: userId });
+    if (!fromUserAccount) {
+        throw new AppError("System account not found", 400);
+    }
+
+    return { fromUserAccount, toUserAccount };
 }
 
 async function isTransactionAlreadyExist(idempotencyKey){
@@ -158,6 +218,7 @@ async function executeTransactionFlow({fromAccount, toAccount, amount, idempoten
     await createDebitLedgerEntry({fromAccount, amount, _transaction, session});
     await createCreditLedgerEntry({toAccount, amount, _transaction, session});
         
+   
     await transactionModel.findOneAndUpdate(
             { _id: _transaction._id },
             { status: "COMPLETED" },
@@ -191,4 +252,4 @@ async function sendTransactionEmail({
         
 }
 
-module.exports = {createTransaction}
+module.exports = {createTransaction, createInitialFunding}

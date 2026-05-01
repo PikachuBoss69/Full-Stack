@@ -22,7 +22,15 @@ const userSchema = mongoose.Schema({
                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                 "Password must contain uppercase, lowercase, number, and special character"
         ]
+    },
+    systemUser: {
+        type: Boolean,
+        default: false,
+        immutable: true,
+        select: false
     }
+},{
+    timestamps: true
 })
 
 userSchema.pre("save", async function(){

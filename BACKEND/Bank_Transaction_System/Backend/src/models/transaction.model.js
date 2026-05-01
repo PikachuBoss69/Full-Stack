@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const transactionSchema = mongoose.Schema({
     toAccount : {
-        type :  mongoose.Schema.Type.ObjectId,
+        type :  mongoose.Schema.Types.ObjectId,
         ref : "account",
         required :[true,"Receiver's Account is required"],
         index :true
     },
     fromAccount : {
-        type :  mongoose.Schema.Type.ObjectId,
+        type :  mongoose.Schema.Types.ObjectId,
         ref : "account",
         required :[true,"Sender's Account is required"],
         index :true

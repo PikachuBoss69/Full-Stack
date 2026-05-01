@@ -52,11 +52,10 @@ blockedOperations.forEach(operation => {
     ledgerSchema.pre(operation, preventLedgerModification);
 });
 
-ledgerSchema.pre('save', function (next) {
+ledgerSchema.pre('save', async function () {
     if (!this.isNew) {
-        return next(new Error("Ledger entries are immutable"));
+        throw new Error("Ledger entries are immutable");
     }
-    next();
 });
 
 
