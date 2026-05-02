@@ -212,8 +212,14 @@ npm run dev
 | ------ | --------------------------------------- | ------------------ |
 | POST   | `/api/auth/register`                    | Register user      |
 | POST   | `/api/auth/login`                       | Login              |
+| POST   | `/api/auth/logout`                      | LogOut             |
+
 | POST   | `/api/transaction/`                     | Create transaction |
 | POST   | `/api/transaction/system/initial-funds` | System funding     |
+
+| POST   | `/api/account/createAcc`                | Create Account     |
+| POST   | `/api/account/getAcc`                   | See Account Info   |
+| POST   | `/api/account/getAccBalance`            | get Account Balance|
 
 ---
 
