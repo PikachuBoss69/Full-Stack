@@ -2,7 +2,7 @@ TLDR
 
 The session explains the fundamentals of TypeScript, focusing on type inference vs type annotation, how TypeScript prevents runtime errors through static typing, and the role of primitive types. It emphasizes when to rely on automatic type detection and when to explicitly define types for better control and maintainability.
 
-Meeting Notes
+
 ### Introduction to TypeScript
 TypeScript is a superset of JavaScript, meaning it builds on JavaScript by adding additional features.
 The core addition is static typing, which allows developers to define and enforce data types.
