@@ -35,7 +35,7 @@ let | x | : | number | = | 10 | ;
 ✔ Removes whitespace/comments
 ✔ No logic, just splitting
 
-🔹 PARSER
+##🔹 PARSER
 
 Purpose: Tokens → AST (tree structure)
 
@@ -49,14 +49,14 @@ VariableDeclaration
 ✔ Detects syntax errors
 ✔ Builds structured representation
 
-🔹 AST (Abstract Syntax Tree)
+##🔹 AST (Abstract Syntax Tree)
 
 Purpose: Core representation of program
 
 ✔ Every node = language construct
 ✔ Used by all later phases
 
-🔹 BINDER ⚡
+##🔹 BINDER ⚡
 
 Purpose: Connect identifiers → declarations
 
@@ -79,7 +79,7 @@ if (x !== null) { x.toString(); }
 
 🔥 Insight: Without binder → no understanding of code
 
-🔹 CHECKER 🧠
+##🔹 CHECKER 🧠
 
 Purpose: Type system + validation
 
@@ -107,7 +107,7 @@ if (false) { /* skipped */ }
 
 🔥 Insight: Checker = brain of TypeScript
 
-🔹 EMITTER ⚙️
+##🔹 EMITTER ⚙️
 
 Purpose: Generate output files
 
