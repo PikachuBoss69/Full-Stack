@@ -20,4 +20,4 @@ export function ChaiList({items}: ChaiListProps){
             ))}
         </div> 
     )
-}
+} 
